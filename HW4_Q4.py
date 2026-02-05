@@ -33,14 +33,13 @@ def _(mo):
     mu_slider = mo.ui.slider(start=10, stop=80, value=31, step=1, label="μ (GPa)")
     nu_slider = mo.ui.slider(start=0.10, stop=0.49, value=0.333, step=0.01, label="ν")
     h_slider = mo.ui.slider(start=1, stop=20, value=6, step=0.5, label="h / b")
-    mo.md(f"""
-## Parameters
+    mo.md(f"""## Parameters *(default: μ=31 GPa, ν=1/3, h=6b)*
 
-| | Slider | Value |
-|--|--------|-------|
-| μ | {mu_slider} | **{mu_slider.value} GPa** |
-| ν | {nu_slider} | **{nu_slider.value:.2f}** |
-| h/b | {h_slider} | **{h_slider.value}** |
+{mu_slider}
+
+{nu_slider}
+
+{h_slider}
 """)
     return mu_slider, nu_slider, h_slider
 
